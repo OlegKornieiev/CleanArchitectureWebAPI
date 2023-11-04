@@ -1,0 +1,96 @@
+{
+	"info": {
+		"_postman_id": "2be6a805-ece4-418d-9850-c3d0a3a4fc14",
+		"name": "rectangle_app",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "1852235"
+	},
+	"item": [
+		{
+			"name": "GetUsers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44378/user",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44378",
+					"path": [
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"login\": \"o'kon\",\r\n  \"password\": 10.0\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44378/login",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44378",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "FindRectangles",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\"X\": 10.0, \"Y\": 20.0},\r\n    {\"X\": 5.0, \"Y\": 15.0}\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44378/rectangle/findRectangles",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44378",
+					"path": [
+						"rectangle",
+						"findRectangles"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
