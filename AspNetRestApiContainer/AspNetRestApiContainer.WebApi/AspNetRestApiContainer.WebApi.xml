@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AspNetRestApiContainer.WebApi</name>
+    </assembly>
+    <members>
+        <member name="M:AspNetRestApiContainer.WebApi.Controllers.v1.RectangleController.Get(AspNetRestApiContainer.Application.Parameters.Queries.GetRectangleQuery)">
+            <summary>
+            GET: api/controller
+            </summary>
+            <param name="filter"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AspNetRestApiContainer.WebApi.Controllers.v1.UserController.Get">
+            <summary>
+            GET: api/controller
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AspNetRestApiContainer.WebApi.Controllers.v1.UserController.Authenticate(AspNetRestApiContainer.Application.Parameters.Auth.AuthRequest)">
+            <summary>
+            POST: api/controller
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
