@@ -1,10 +1,9 @@
-﻿using AspNetRestApiContainer.Application.Parameters.Commands;
-using AspNetRestApiContainer.Application.Parameters.Queries;
+﻿using AspNetRestApiContainer.Application.Parameters.Queries;
+using AspNetRestApiContainer.Domain.Entities;
 using AspNetRestApiContainer.Infrastructure.Shared.Services;
-using AspNetRestApiContainer.WebApi.Extensions;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace AspNetRestApiContainer.WebApi.Controllers.v1
@@ -25,10 +24,12 @@ namespace AspNetRestApiContainer.WebApi.Controllers.v1
         /// </summary>
         /// <param name="filter"></param>
         /// <returns></returns>
-        [HttpGet]
-        public async Task<IActionResult> Get([FromQuery] GetRectangleQuery filter)
+        [Authorize]
+        [HttpPost("findRectangles")]
+        public async Task<IActionResult> FindRectangles([FromBody] List<Coordinate> filter)
         {
-            var rectangleResponse = await _rectangleService.GetRectangles(filter);
+            var request = new GetRectangleQuery() { Coordinates = filter };
+            var rectangleResponse = await _rectangleService.GetRectangles(request);
             return Ok(rectangleResponse);
         }
     }
